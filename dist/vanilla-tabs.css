@@ -4,8 +4,16 @@
 	padding: 0;
 }
 .tabs__nav_link {
+	text-align: center;
 	cursor: pointer;
 	text-decoration: none;
+}
+
+.tabs__nav_icon {
+	width: 62px;
+	display: block;
+	margin: auto;
+	cursor: pointer;
 }
 .tabs__content {
 	display: block;
@@ -132,7 +140,7 @@
 	overflow: auto;
 	width: auto;
 	text-align: center;
-	color: gray;
+	color: #808080;
 	font-size: 1.2rem;
 }
 .tabs.is__responsive .tabs__content_wrapper,
@@ -147,4 +155,23 @@
 .tabs.style__accordion .tabs__content.is__active .tabs__content_wrapper {
 	height: auto;
 	transform: scaleY(1);
+}
+
+@media (max-width: 767.98px) {
+	.tabs__nav_icon {
+		display: initial;
+	}
+	.tabs__nav_link {
+		text-align: left;
+	}
+	.tabs__nav_link::after {
+		content: "\f107";
+		font-family: "FontAwesome";
+		position: absolute;
+		right: 50px;
+		margin-top: 14px;
+	}
+	.tabs__nav_link.is__active::after {
+		content: "\f106";
+	}
 }
